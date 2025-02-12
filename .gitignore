@@ -1,0 +1,54 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore Terraform crash logs
+crash.log
+
+# Ignore Terraform variable files
+*.tfvars
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore .terraform directory
+.terraform/
+
+# Ignore sensitive files
+*.pem
+*.key
+
+# Ignore IDE specific files
+../.idea/
+.vscode/
+
+# Ignore Scratches and Consoles
+.idea/scratches/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore compiled files
+*.class
+*.o
+*.so
+
+# Ignore package manager files
+node_modules/
+vendor/
+
+# Ignore build directories
+build/
+dist/
+target/.terraform/
+.terraform.lock.hc
