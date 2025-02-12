@@ -1,8 +1,5 @@
 # Terraform AWS Infrastructure
 
-AWS and Terraform project
-# Terraform AWS Infrastructure Automation
-
 ## Project Overview
 This project demonstrates Infrastructure as Code (IaC) using Terraform to provision AWS cloud resources. The goal is to automate the deployment of cloud infrastructure, ensuring consistency, scalability, and version control.
 
