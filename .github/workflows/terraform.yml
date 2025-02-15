@@ -1,0 +1,31 @@
+name: Terraform CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Checks out your repository code
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: "1.3.6"  # Specify your Terraform version
+
+      - name: Terraform Format Check
+        run: terraform fmt -check  # Verifies that the code is properly formatted
+
+      - name: Terraform Init
+        run: terraform init -input=false  # Initializes the Terraform working directory
+
+      - name: Terraform Validate
+        run: terraform validate  # Validates the Terraform files for syntax and configuration errors
+
+      - name: Terraform Plan
+        run: terraform plan -input=false  # Shows what changes Terraform will make
