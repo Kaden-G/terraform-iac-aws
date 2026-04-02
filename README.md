@@ -1,7 +1,7 @@
 # Terraform AWS Infrastructure
 
 ## Project Overview
-This project demonstrates Infrastructure as Code (IaC) using Terraform to provision AWS cloud resources. The goal is to automate the deployment of cloud infrastructure, ensuring consistency, scalability, and version control.
+This project demonstrates Infrastructure as Code (IaC) using Terraform to provision AWS cloud resources. The goal is to automate cloud infrastructure deployment and ensure consistency, scalability, and version control.
 
 ## Features Implemented So Far
 - **Local Environment Setup:**
@@ -42,33 +42,79 @@ This project demonstrates Infrastructure as Code (IaC) using Terraform to provis
 5. **Deploy Sample Application:**
    - Set up a simple web application to test the infrastructure.
 
-## How to Run This Project
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-repo.git
-   cd your-repo
-   ```
-2. Initialize Terraform:
-   ```sh
-   terraform init
-   ```
-3. Plan the infrastructure:
-   ```sh
-   terraform plan
-   ```
-4. Apply changes to provision resources:
-   ```sh
-   terraform apply
-   ```
-5. Verify resources in AWS Console.
+## Day 4–5: Testing & Documentation
 
-## Cost Considerations
-- Resources like **S3, IAM users, and DynamoDB** are mostly free-tier eligible.
-- **EC2 instances, Load Balancers, and NAT Gateways** may incur charges.
-- Run `terraform destroy` after testing to avoid unexpected costs.
+### Verification
+- **SSH into EC2 Instance:**  
+  If port 22 is open, verify connectivity:
+  ```bash
+  ssh -i /path/to/key.pem ec2-user@<EC2-PUBLIC-IP>  # Connects to your EC2 instance
+Resource Validation:
+Check the AWS Console to confirm that subnets, route tables, and security groups are correctly configured.
+Documentation Updates
+Project Scope & Architecture:
+Update this README with an overview of the architecture. A simple diagram can help illustrate:
 
-## Contributions & Issues
-- Feel free to fork, contribute, or raise issues in the repository.
+     VPC
+      │
+   ┌──┴────┐
+   │       │
+Subnet  Subnet
+(Public) (Private)
+      │
+    EC2 Instance
 
-## Acknowledgments
-- Inspired by best practices in Terraform and AWS infrastructure automation.
+
+Terraform Commands:
+
+terraform init   # Initialize Terraform configuration
+terraform plan   # Review the execution plan
+terraform apply  # Apply changes to provision resources
+Remote State Configuration:
+If using remote state, confirm that your S3 bucket and DynamoDB table are properly set up (see S3 & DynamoDB section above).
+
+How to Run This Project
+Clone the repository:
+sh
+Copy
+git clone https://github.com/your-repo.git
+cd your-repo
+Initialize Terraform:
+sh
+Copy
+terraform init
+Plan the infrastructure:
+sh
+Copy
+terraform plan
+Apply changes to provision resources:
+sh
+Copy
+terraform apply
+Verify resources in the AWS Console.
+Cost Considerations
+Resources like S3, IAM users, and DynamoDB are mostly free-tier eligible.
+EC2 instances, Load Balancers, and NAT Gateways may incur charges.
+Run terraform destroy after testing to avoid unexpected costs.
+Contributions & Issues
+Feel free to fork, contribute, or raise issues in the repository.
+Acknowledgments
+Inspired by best practices in Terraform and AWS infrastructure automation.
+vbnet
+Copy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
